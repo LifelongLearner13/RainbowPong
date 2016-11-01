@@ -1,6 +1,6 @@
-//  paddle.h
+#ifndef rainbowpong_paddle_h
+#define rainbowpong_paddle_h
 
-#pragma once
 #include <SFML/Graphics.hpp>
 
 
@@ -15,7 +15,7 @@ private:
     
     sf::RectangleShape paddleShape;
     
-    float paddleSpeed = .3f;
+    float paddleSpeed;
     
 public:
     /**
@@ -23,7 +23,7 @@ public:
      * \param startX horizontal starting position of the paddle
      * \param startY vertical starting position of the paddle
      */
-    Paddle(float startX, float startY);
+    Paddle(float startX, float startY, float initSpeed);
     
     sf::FloatRect getPosition();
     
@@ -36,3 +36,5 @@ public:
     void update();
     
 };
+
+#endif /* paddle_h */
