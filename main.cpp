@@ -9,17 +9,16 @@ int main(int argc, const char * argv[])
 {
     int windowWidth = 1024;
     int windowHeight = 768;
-    // Make a window that is 1024 by 768 pixels
-    // And has the title "Pong"
+    // Initialization
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Rainbow Pong");
     
-    int leftScore = 0;
-    int rightScore = 0;
+//    int leftScore = 0;
+//    int rightScore = 0;
     
     Paddle leftPaddle (70, windowHeight / 2 - 20, .3f);
     Paddle rightPaddle (windowWidth - 70, windowHeight / 2 - 20, .3f);
     
-    Ball ball(windowWidth / 2, 1);
+    Ball ball(windowWidth / 2, windowHeight / 2);
     
     // Config Heads Up Display (aka hud)
     sf::Text hud;
