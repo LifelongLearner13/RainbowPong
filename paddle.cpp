@@ -5,8 +5,13 @@ Paddle::Paddle(float startX, float startY, float initSpeed)
     position.x = startX;
     position.y = startY;
     
-    paddleShape.setSize(sf::Vector2f(5, 50));
+    paddleShape.setSize(sf::Vector2f(5, 100));
     paddleShape.setPosition(position);
+    // Reposition shapes local origin from the
+    // top left corner to the center.
+    paddleShape.setOrigin(
+        paddleShape.getSize().x / 2,
+        paddleShape.getSize().y / 2);
     
     paddleSpeed = initSpeed;
 }

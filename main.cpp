@@ -9,14 +9,15 @@ int main(int argc, const char * argv[])
 {
     int windowWidth = 1024;
     int windowHeight = 768;
-    // Initialization
+    /* ----- Initialization ----- */
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Rainbow Pong");
     
+    /* ----- Loading Content ----- */
 //    int leftScore = 0;
 //    int rightScore = 0;
     
-    Paddle leftPaddle (70, windowHeight / 2 - 20, .3f);
-    Paddle rightPaddle (windowWidth - 70, windowHeight / 2 - 20, .3f);
+    Paddle leftPaddle (70, windowHeight / 2, .3f);
+    Paddle rightPaddle (windowWidth - 70, windowHeight / 2, .3f);
     
     Ball ball(windowWidth / 2, windowHeight / 2);
     
@@ -28,6 +29,7 @@ int main(int argc, const char * argv[])
     hud.setCharacterSize(75);
     hud.setFillColor(sf::Color::White);
     
+    /* ----- Main Game Loop ----- */
     while (window.isOpen())
     {
         // Handle the player input
@@ -80,7 +82,7 @@ int main(int argc, const char * argv[])
         // Draw the frame
         
         // Clear everything from the last frame
-        window.clear(sf::Color(26, 128, 182,255));
+        window.clear(sf::Color::Black);
         
         window.draw(leftPaddle.getShape());
         window.draw(rightPaddle.getShape());
